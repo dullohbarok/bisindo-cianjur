@@ -3,264 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelas BISINDO Cianjur</title>
+    <title>KELAS BISINDO CIANJUR - Media Pembelajaran</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .glass-effect { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-blue-50 min-h-screen">
 
-    <!-- Screen Login -->
-    <div id="login-screen" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-violet-700 p-4">
-        <div class="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-md transform transition-all">
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="flex items-center justify-center min-h-screen p-4">
+        <div class="max-w-md w-full glass-morphism p-8 rounded-2xl shadow-2xl">
             <div class="text-center mb-8">
-                <div class="bg-indigo-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="hand" class="text-indigo-600 w-8 h-8"></i>
+                <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-hands-asl-interpreting text-white text-3xl"></i>
                 </div>
-                <h1 class="text-2xl font-bold text-gray-800">Kelas Bisindo Cianjur</h1>
-                <p class="text-gray-500">Masuk untuk mulai belajar</p>
+                <h1 class="text-2xl font-bold text-gray-800">KELAS BISINDO CIANJUR</h1>
+                <p class="text-gray-500">Silahkan login untuk memulai belajar</p>
             </div>
 
             <form id="login-form" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Gmail</label>
-                    <div class="relative">
-                        <i data-lucide="mail" class="absolute left-3 top-3 text-gray-400 w-5 h-5"></i>
-                        <input type="email" id="email" placeholder="nama@gmail.com" required
-                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
-                    </div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="nama@email.com">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Kata Sandi</label>
-                    <div class="relative">
-                        <i data-lucide="lock" class="absolute left-3 top-3 text-gray-400 w-5 h-5"></i>
-                        <input type="password" id="password" placeholder="••••••••" required
-                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
-                    </div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" placeholder="••••••••">
                 </div>
-                <button type="submit" 
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-[1.02] active:scale-95 shadow-md">
                     Masuk Sekarang
                 </button>
             </form>
-            <p class="mt-6 text-center text-xs text-gray-400 uppercase tracking-widest">Edukasi Bahasa Isyarat Indonesia</p>
+
+            <div class="mt-6">
+                <div class="relative flex py-3 items-center">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-400 text-sm">Atau</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+                
+                <button onclick="simulateLogin()" class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium py-3 rounded-lg transition">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" class="w-6 h-6" alt="Google">
+                    Masuk dengan Google
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Main Dashboard -->
-    <div id="main-app" class="hidden min-h-screen flex flex-col md:flex-row">
-        <!-- Sidebar -->
-        <aside class="w-full md:w-72 bg-white border-r border-gray-200 p-6 flex flex-col glass-effect">
-            <div class="flex items-center gap-3 mb-10">
-                <div class="bg-indigo-600 p-2 rounded-lg text-white">
-                    <i data-lucide="book-open" class="w-6 h-6"></i>
+    <!-- MAIN APP SCREEN (HIDDEN BY DEFAULT) -->
+    <div id="main-app" class="hidden">
+        <!-- Header -->
+        <nav class="bg-white shadow-sm sticky top-0 z-40">
+            <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-hands-asl-interpreting text-blue-600 text-xl"></i>
+                    <span class="font-bold text-lg text-gray-800 hidden md:block">KELAS BISINDO CIANJUR</span>
                 </div>
-                <span class="text-xl font-bold text-gray-800">Kelas BISINDO Cianjur</span>
-            </div>
-
-            <nav class="space-y-2 flex-1">
-                <button onclick="showPage('dashboard')" id="btn-dashboard" class="nav-link active w-full flex items-center gap-3 p-3 rounded-xl font-medium transition-all bg-indigo-50 text-indigo-700">
-                    <i data-lucide="layout-grid"></i> Beranda
-                </button>
-                <button onclick="showPage('alphabet')" id="btn-alphabet" class="nav-link w-full flex items-center gap-3 p-3 rounded-xl font-medium transition-all text-gray-500 hover:bg-gray-50">
-                    <i data-lucide="spell-check"></i> Kolom Abjad
-                </button>
-                <button onclick="showPage('numbers')" id="btn-numbers" class="nav-link w-full flex items-center gap-3 p-3 rounded-xl font-medium transition-all text-gray-500 hover:bg-gray-50">
-                    <i data-lucide="hash"></i> Kolom Angka
-                </button>
-                <button onclick="showPage('greetings')" id="btn-greetings" class="nav-link w-full flex items-center gap-3 p-3 rounded-xl font-medium transition-all text-gray-500 hover:bg-gray-50">
-                    <i data-lucide="message-square"></i> Kolom Sapaan
-                </button>
-            </nav>
-
-            <div class="mt-auto pt-6 border-t border-gray-100">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold" id="user-initial">P</div>
-                    <div class="overflow-hidden">
-                        <p class="text-sm font-medium text-gray-900 truncate" id="user-display">peserta@gmail.com</p>
-                        <p class="text-xs text-gray-500">Status: Belajar</p>
+                <div class="flex items-center gap-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs text-gray-400">Selamat Belajar,</p>
+                        <p id="user-display" class="text-sm font-semibold text-gray-700">Peserta Bisindo</p>
                     </div>
-                </div>
-                <button onclick="logout()" class="w-full flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 rounded-xl transition-colors font-medium">
-                    <i data-lucide="log-out"></i> Keluar
-                </button>
-            </div>
-        </aside>
-
-        <!-- Content Area -->
-        <main class="flex-1 p-6 md:p-10 overflow-y-auto bg-slate-50">
-            <!-- Header -->
-            <div class="mb-8">
-                <h2 id="page-title" class="text-3xl font-bold text-gray-800">Selamat Datang</h2>
-                <p id="page-desc" class="text-gray-500 mt-1">Pilih modul untuk memulai pembelajaran hari ini.</p>
-            </div>
-
-            <!-- Sections -->
-            <!-- Beranda -->
-            <div id="page-dashboard" class="tab-content active space-y-8">
-                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2">Halo, Teman Tuli & Teman Dengar!</h3>
-                        <p class="text-indigo-100 max-w-md">Mari kita bangun komunikasi yang lebih inklusif dengan mempelajari BISINDO (Bahasa Isyarat Indonesia).</p>
-                    </div>
-                    <div class="text-6xl select-none">🤟✨</div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div onclick="showPage('alphabet')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group">
-                        <div class="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i data-lucide="spell-check"></i>
-                        </div>
-                        <h4 class="text-lg font-bold mb-1">Abjad Isyarat</h4>
-                        <p class="text-gray-500 text-sm">Belajar mengeja nama dan kata dasar.</p>
-                    </div>
-                    <div onclick="showPage('numbers')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group">
-                        <div class="bg-emerald-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                            <i data-lucide="hash"></i>
-                        </div>
-                        <h4 class="text-lg font-bold mb-1">Angka Isyarat</h4>
-                        <p class="text-gray-500 text-sm">Belajar menghitung 0 sampai 100.</p>
-                    </div>
-                    <div onclick="showPage('greetings')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group">
-                        <div class="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                            <i data-lucide="message-circle"></i>
-                        </div>
-                        <h4 class="text-lg font-bold mb-1">Sapaan & Video</h4>
-                        <p class="text-gray-500 text-sm">Tonton tutorial sapaan dari YouTube.</p>
-                    </div>
+                    <button onclick="logout()" class="p-2 text-gray-400 hover:text-red-500 transition">
+                        <i class="fas fa-sign-out-alt text-xl"></i>
+                    </button>
                 </div>
             </div>
+        </nav>
 
-            <!-- Abjad -->
-            <div id="page-alphabet" class="tab-content">
-                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-4" id="alphabet-grid">
-                    <!-- Dinamis via JS -->
-                </div>
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 py-8">
+            <div class="mb-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Pilih Materi Pembelajaran</h2>
+                <p class="text-gray-600">Tekan kartu untuk melihat video tutorial bahasa isyarat</p>
             </div>
 
-            <!-- Angka -->
-            <div id="page-numbers" class="tab-content">
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6" id="numbers-grid">
-                    <!-- Dinamis via JS -->
-                </div>
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="switchTab('abjad')" id="btn-abjad" class="tab-btn active px-6 py-2 rounded-full font-semibold transition bg-blue-600 text-white shadow-md">Abjad (A-Z)</button>
+                <button onclick="switchTab('angka')" id="btn-angka" class="tab-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-600 hover:bg-gray-100">Angka (1-30)</button>
+                <button onclick="switchTab('sapaan')" id="btn-sapaan" class="tab-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-600 hover:bg-gray-100">Sapaan Umum</button>
             </div>
 
-            <!-- Sapaan -->
-            <div id="page-greetings" class="tab-content space-y-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Video 1 -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
-                        <div class="aspect-video">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/p8Y2h6Uq_oU" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sapaan Dasar</h4>
-                            <p class="text-gray-500 text-sm">Belajar cara mengatakan Halo, Apa Kabar, dan Senang Bertemu Anda.</p>
-                        </div>
-                    </div>
-                    <!-- Video 2 -->
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
-                        <div class="aspect-video">
-                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/0zX9G8z-V0g" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Terima Kasih & Maaf</h4>
-                            <p class="text-gray-500 text-sm">Etika dasar dan kata-kata santun dalam bahasa isyarat.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Content Grids -->
+            <div id="content-abjad" class="tab-content grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 animate-fadeIn">
+                <!-- JS will populate -->
+            </div>
+
+            <div id="content-angka" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 animate-fadeIn">
+                <!-- JS will populate -->
+            </div>
+
+            <div id="content-sapaan" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 animate-fadeIn">
+                <!-- JS will populate -->
             </div>
         </main>
     </div>
 
-    <script>
-        // Inisialisasi Icons
-        lucide.createIcons();
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black bg-opacity-75" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-4 border-b flex justify-between items-center bg-gray-50">
+                <h3 id="modal-title" class="font-bold text-lg text-gray-800 uppercase">Tutorial</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="video-wrapper" class="video-container">
+                <!-- iframe injected here -->
+            </div>
+            <div class="p-4 bg-gray-50 text-center text-sm text-gray-500 italic">
+                Sumber: YouTube Kelas Bisindo
+            </div>
+        </div>
+    </div>
 
-        // Data & Logic
+    <script>
+        // Data Configuration
+        const abjad = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        const angka = Array.from({length: 30}, (_, i) => i + 1);
+        const sapaan = [
+            "Halo / Hai", "Apa Kabar?", "Terima Kasih", "Sama-sama", "Maaf", 
+            "Tolong", "Permisi", "Selamat Pagi", "Selamat Siang", "Selamat Malam"
+        ];
+
+        // Placeholder YouTube IDs (Ganti ID ini dengan ID video YouTube asli Anda)
+        // Format: https://www.youtube.com/watch?v=VIDEO_ID
+        const youtubePlaceholders = {
+            abjad: "f26f2vV-t90", // Contoh ID video abjad
+            angka: "8v_07Vw8o-E", // Contoh ID video angka
+            sapaan: "5lXk5l59eDI" // Contoh ID video sapaan
+        };
+
+        // UI Logic
         const loginForm = document.getElementById('login-form');
         const loginScreen = document.getElementById('login-screen');
         const mainApp = document.getElementById('main-app');
-        
-        // Handle Login
-        loginForm.addEventListener('submit', (e) => {
+        const modal = document.getElementById('video-modal');
+        const videoWrapper = document.getElementById('video-wrapper');
+        const modalTitle = document.getElementById('modal-title');
+
+        loginForm.onsubmit = (e) => {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            
-            // Update UI Profil
-            document.getElementById('user-display').innerText = email;
-            document.getElementById('user-initial').innerText = email[0].toUpperCase();
-            
-            // Transisi Screen
+            simulateLogin();
+        };
+
+        function simulateLogin() {
             loginScreen.classList.add('hidden');
             mainApp.classList.remove('hidden');
-            
-            // Refresh Icons inside main app
-            lucide.createIcons();
-        });
+            initGrids();
+        }
 
         function logout() {
-            if(confirm('Apakah Anda yakin ingin keluar?')) {
-                mainApp.classList.add('hidden');
-                loginScreen.classList.remove('hidden');
-                loginForm.reset();
-            }
+            mainApp.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
         }
 
-        // Navigation
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.tab-content').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(btn => {
-                btn.classList.remove('bg-indigo-50', 'text-indigo-700');
-                btn.classList.add('text-gray-500');
+        function initGrids() {
+            // Populate Abjad
+            const abjadContainer = document.getElementById('content-abjad');
+            abjadContainer.innerHTML = abjad.map(item => `
+                <div onclick="openVideo('${item}', '${youtubePlaceholders.abjad}')" class="group bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-blue-500 hover:shadow-md transition cursor-pointer text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition">${item}</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Isyarat ${item}</div>
+                </div>
+            `).join('');
+
+            // Populate Angka
+            const angkaContainer = document.getElementById('content-angka');
+            angkaContainer.innerHTML = angka.map(item => `
+                <div onclick="openVideo('Angka ${item}', '${youtubePlaceholders.angka}')" class="group bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-blue-500 hover:shadow-md transition cursor-pointer text-center">
+                    <div class="text-3xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition">${item}</div>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-wider">Nomor</div>
+                </div>
+            `).join('');
+
+            // Populate Sapaan
+            const sapaanContainer = document.getElementById('content-sapaan');
+            sapaanContainer.innerHTML = sapaan.map(item => `
+                <div onclick="openVideo('${item}', '${youtubePlaceholders.sapaan}')" class="group bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-blue-500 hover:shadow-md transition cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <div class="font-bold text-gray-700">${item}</div>
+                        <i class="fas fa-play-circle text-blue-400 group-hover:text-blue-600 transition text-2xl"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function switchTab(tab) {
+            // Update Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-gray-600');
             });
+            document.getElementById(`btn-${tab}`).classList.add('bg-blue-600', 'text-white', 'shadow-md');
+            document.getElementById(`btn-${tab}`).classList.remove('bg-white', 'text-gray-600');
 
-            // Show selected page
-            document.getElementById(`page-${pageId}`).classList.add('active');
-            document.getElementById(`btn-${pageId}`).classList.add('bg-indigo-50', 'text-indigo-700');
-            document.getElementById(`btn-${pageId}`).classList.remove('text-gray-500');
-
-            // Update Header
-            const titles = {
-                'dashboard': ['Beranda', 'Mari tingkatkan kemampuan bahasa isyaratmu hari ini.'],
-                'alphabet': ['Abjad Isyarat', 'Klik kartu untuk melihat detail isyarat tangan.'],
-                'numbers': ['Angka Isyarat', 'Belajar menghitung angka 0-9 secara visual.'],
-                'greetings': ['Kolom Sapaan', 'Pelajari percakapan melalui video tutorial YouTube.']
-            };
-            document.getElementById('page-title').innerText = titles[pageId][0];
-            document.getElementById('page-desc').innerText = titles[pageId][1];
+            // Update Content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(`content-${tab}`).classList.remove('hidden');
         }
 
-        // Render Alphabet
-        const alphabetGrid = document.getElementById('alphabet-grid');
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach(char => {
-            const div = document.createElement('div');
-            div.className = "bg-white aspect-square rounded-2xl border border-gray-100 flex flex-col items-center justify-center shadow-sm hover:scale-105 hover:border-indigo-300 transition-all cursor-pointer group";
-            div.innerHTML = `
-                <span class="text-3xl font-bold text-indigo-600 group-hover:scale-110 transition-transform">${char}</span>
-                <span class="text-[10px] text-gray-400 mt-1 font-mono">ISYARAT</span>
-            `;
-            alphabetGrid.appendChild(div);
+        function openVideo(title, videoId) {
+            modalTitle.innerText = `Tutorial: ${title}`;
+            videoWrapper.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            videoWrapper.innerHTML = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
-
-        // Render Numbers
-        const numbersGrid = document.getElementById('numbers-grid');
-        for(let i=0; i<=9; i++) {
-            const div = document.createElement('div');
-            div.className = "bg-white p-8 rounded-3xl border border-gray-100 flex flex-col items-center justify-center shadow-sm hover:bg-indigo-50 transition-colors cursor-pointer";
-            div.innerHTML = `
-                <span class="text-5xl font-black text-indigo-700">${i}</span>
-                <p class="mt-2 font-medium text-gray-500">Angka ${i}</p>
-            `;
-            numbersGrid.appendChild(div);
-        }
     </script>
+
+    <style>
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </body>
 </html>
