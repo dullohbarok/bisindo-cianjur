@@ -13,8 +13,13 @@
         import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, query } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
         // Global Config & State
-        const firebaseConfig = JSON.parse(window.__firebase_config || '{}');
-        const appId = window.__app_id || 'bisindo-cianjur-default';
+        const firebaseConfig = {
+          apiKey: "AIzaSy...",
+          authDomain: "bisindo-cianjur.firebaseapp.com",
+          projectId: "bisindo-cianjur",
+          storageBucket: "bisindo-cianjur.appspot.com",
+          messagingSenderId: "123456789",
+          appId: "1:12345:web:abcde"};
         
         let app, auth, db;
         let currentUser = null;
