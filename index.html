@@ -191,7 +191,65 @@
 
         // Youtube URLs (Mockups - logic is for 26, 30, and 10 items)
         // In real use, you would replace these IDs with actual BISINDO tutorials
-        const youtubeLinks = "https://www.youtube.com/shorts/1uw7oP4e6Kc"; // Example placeholder
+        // CARA MENCARI KODE: 
+// Jika link youtube adalah https://www.youtube.com/watch?v=ABC123xyz
+// Maka kodenya adalah: ABC123xyz
+
+const youtubeLinks = {
+    // 1. DAFTAR ABJAD (26 VIDEO)
+    abjad: [
+        'https://www.youtube.com/shorts/1uw7oP4e6Kc', // Index 0
+        'KODE_HURUF_B', // Index 1
+        'KODE_HURUF_C', // Index 2
+        'KODE_HURUF_D', // Index 3
+        'KODE_HURUF_E', 
+        'KODE_HURUF_F', 
+        'KODE_HURUF_G', 
+        'KODE_HURUF_H', 
+        'KODE_HURUF_I', 
+        'KODE_HURUF_J', 
+        'KODE_HURUF_K', 
+        'KODE_HURUF_L', 
+        'KODE_HURUF_M', 
+        'KODE_HURUF_N', 
+        'KODE_HURUF_O', 
+        'KODE_HURUF_P', 
+        'KODE_HURUF_Q', 
+        'KODE_HURUF_R', 
+        'KODE_HURUF_S', 
+        'KODE_HURUF_T', 
+        'KODE_HURUF_U', 
+        'KODE_HURUF_V', 
+        'KODE_HURUF_W', 
+        'KODE_HURUF_X', 
+        'KODE_HURUF_Y', 
+        'KODE_HURUF_Z'  // Index 25
+    ],
+
+    // 2. DAFTAR ANGKA (30 VIDEO)
+    angka: [
+        'KODE_ANGKA_1', 'KODE_ANGKA_2', 'KODE_ANGKA_3', 'KODE_ANGKA_4', 'KODE_ANGKA_5',
+        'KODE_ANGKA_6', 'KODE_ANGKA_7', 'KODE_ANGKA_8', 'KODE_ANGKA_9', 'KODE_ANGKA_10',
+        'KODE_ANGKA_11', 'KODE_ANGKA_12', 'KODE_ANGKA_13', 'KODE_ANGKA_14', 'KODE_ANGKA_15',
+        'KODE_ANGKA_16', 'KODE_ANGKA_17', 'KODE_ANGKA_18', 'KODE_ANGKA_19', 'KODE_ANGKA_20',
+        'KODE_ANGKA_21', 'KODE_ANGKA_22', 'KODE_ANGKA_23', 'KODE_ANGKA_24', 'KODE_ANGKA_25',
+        'KODE_ANGKA_26', 'KODE_ANGKA_27', 'KODE_ANGKA_28', 'KODE_ANGKA_29', 'KODE_ANGKA_30'
+    ],
+
+    // 3. DAFTAR SAPAAN (10 VIDEO)
+    sapaan: [
+        'KODE_HALO',           // 1
+        'KODE_SELAMAT_PAGI',   // 2
+        'KODE_TERIMA_KASIH',   // 3
+        'KODE_MAAF',           // 4
+        'KODE_SAMA_SAMA',      // 5
+        'KODE_APA_KABAR',      // 6
+        'KODE_PERMISI',        // 7
+        'KODE_SELAMAT_MALAM',  // 8
+        'KODE_SENANG_BERTEMU', // 9
+        'KODE_SAMPAI_JUMPA'    // 10
+    ]
+};
 
         // Navigation Logic
         function showView(viewId) {
